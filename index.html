@@ -354,61 +354,113 @@
         }
 
         /* Contact Form */
-        .contact {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, #1e1e36 0%, #16213e 100%);
-        }
+        /* Contact Form - Full width on mobile */
+.contact {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #1e1e36 0%, #16213e 100%);
+}
 
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+.contact-container {
+    width: 100%;
+    max-width: 1000px;     /* Desktop pe thoda zyada space */
+    margin: 0 auto;
+    padding: 0 1.5rem;     /* Mobile pe kam padding, zyada content dikhega */
+}
 
-        .contact-form {
-            background: rgba(255, 145, 0, 0.05);
-            padding: 3rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+/* Mobile ke liye full width feel */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 0 1rem;   /* Aur bhi tight kar sakte ho agar chaho */
+    }
+    
+    .contact-form {
+        padding: 2.5rem 1.5rem !important;  /* Form ka internal padding thoda kam */
+        border-radius: 16px;
+    }
+}
 
-        .form-group {
-            margin-bottom: 2rem;
-        }
+.contact-form {
+    background: rgba(255, 145, 0, 0.05);
+    padding: 3.5rem 4rem;        /* Desktop pe zyada breathing space */
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Mobile pe full width minus thoda margin */
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: white;
-        }
+/* Tablet aur mobile ke liye responsive padding */
+@media (max-width: 992px) {
+    .contact-form {
+        padding: 3rem 2.5rem;
+    }
+}
 
-        .form-control {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
+@media (max-width: 576px) {
+    .contact-form {
+        padding: 2rem 1.5rem;
+        border-radius: 14px;
+    }
+    
+    .form-control {
+        padding: 1rem 1.2rem;
+        font-size: 1.1rem;   /* iOS pe zoom na kare */
+    }
+    
+    .btn-send {   /* Tumhare button ka class jo bhi ho */
+        padding: 1rem 2rem;
+    }
+}
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: rgba(0, 0, 0, 0.952);
-        }
+.form-group {
+    margin-bottom: 2rem;
+}
 
-        .form-control::placeholder {
-            color: #9ca3af;
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: white;
+}
 
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-          }
+.form-control {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(0, 0, 0, 0.952);
+}
+
+.form-control::placeholder {
+    color: #9ca3af;
+}
+
+textarea.form-control {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* Send button ko bhi thoda bada bana dete hain mobile pe */
+#send-btn, .send-project-btn, [type="submit"] {
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem auto;
+    display: block;
+            } 
 
         /* Footer */
         .footer {
@@ -886,4 +938,5 @@
         });
     </script>
 </body>
+
 </html>
